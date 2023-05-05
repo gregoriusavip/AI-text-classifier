@@ -1,10 +1,14 @@
 from flask import Flask, request, render_template
+from classifier_model import model
 
 app = Flask(__name__)
 
+def sentiment_analysis():
+   return None
+
 def my_function(user_input):
    # Your Python script logic here
-   output = "Inputted text is: " + user_input
+   output = "Inputted text is analyzed as: " + str(model.predict_text(user_input))
    return output
 
 @app.route('/')
