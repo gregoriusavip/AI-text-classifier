@@ -1,7 +1,9 @@
 from flask import Flask, request, render_template
 from classifier_tensorflow_model import text_model
+from classifier_rfc import rfc_model
 
-model = text_model()
+tensorflow_model = text_model()
+random_forest_model = rfc_model()
 app = Flask(__name__)
 
 def sentiment_analysis():
@@ -9,7 +11,9 @@ def sentiment_analysis():
 
 def my_function(user_input):
    # Your Python script logic here
-   output = "Inputted text is analyzed as: " + str(model.predict_text(user_input))
+   output = "Inputted text is analyzed as"
+   output += "<br>&emsp;using tensorflow RNN model based of IMDB dataset: " + tensorflow_model.predict_text(user_input)
+   output += "<br>&emsp;using Random Forest model based of twitter comment dataset: " + random_forest_model.predict(user_input)
    return output
 
 @app.route('/')
