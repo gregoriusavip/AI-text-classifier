@@ -1,6 +1,7 @@
 from flask import Flask, request, render_template
-from classifier_model import model
+from classifier_model import text_model
 
+model = text_model()
 app = Flask(__name__)
 
 def sentiment_analysis():
