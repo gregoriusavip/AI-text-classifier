@@ -3,30 +3,75 @@
 <head>
    <title>My Website</title>
    <style>
+      body {
+			font-family: Arial, sans-serif;
+         margin-left: 250px;
+		}
       label {
-         font-size: 30px;
+         font-size: 25px;
       }
-      p {
-         font-size: 30px;
+      h1 {
+			font-weight: bold;
+		}
+      textarea {
+         font-size: 16px;
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			width: 650px;
+			height: 200px;
+         display: block;
       }
-      input[type="text"] {
-         overflow: auto;
-         max-height: 100px;
-         white-space: pre-wrap;
-         word-wrap: break-word;
-         padding: 5px; /* add some padding */
-         border: 1px solid #ccc; /* add a border */
-         box-sizing: border-box; /* include border in element's dimensions */
+      button[type="submit"] {
+			padding: 8px 16px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+         margin-top: 20px;
       }
+      .sent1 {
+			font-size: 20px;
+			margin-bottom: 0;
+         margin: 50px 0;
+         margin-right: 400px;
+		}
+      .box {
+         position: relative;
+			width: 650px;
+			height: 200px;
+			background-color: #ECECEC;
+			border-radius: 4px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+			padding-top: 16px;
+         margin-top: 15px;
+			box-sizing: border-box;
+		}
+		.box p {
+			margin: 0;
+         margin-left: 10px;
+			font-size: 18px;
+		}
    </style>
 </head>
 <body>
+   <h1>Text Analysis Sentiment</h1>
+   <p class="sent1">This is a text analysis sentiment which uses two different model.
+      The first model is based of <b>tensorflow RNN</b> which uses <b>IMDB</b> to train the model.
+      The second model is trained using <b>scikit Random Forest</b> based of <b>Twitter Comments Sentiment Analysis</b> dataset.
+   </p>
    <form method="POST" action="/submit">
-      <label for="user_input">Text to analyze:</label>
-      <input type="text" id="user_input" name="user_input">
+      <textarea id="user_input" name="user_input"></textarea>
       <button type="submit">Submit</button>
   </form>
-   <p>{{ output|safe }}</p>
-   <p>{{ user_input }}</p>
+  <div class="box">
+      <p>{{ user_input|safe }}</p>
+      <ul>
+         {% for item in output %}
+           <li>{{ item }}</li>
+         {% endfor %}
+      </ul>
+   </div>
 </body>
 </html>
