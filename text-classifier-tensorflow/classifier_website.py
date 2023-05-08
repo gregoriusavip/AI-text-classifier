@@ -24,7 +24,7 @@ def home():
 def submit():
    user_input = request.form['user_input']
    output = my_function(user_input)
-   return render_template('output.html', output=output)
+   return render_template('output.html', output=output, user_input=user_input)
 
 if __name__ == '__main__':
    app.run(debug=True)

@@ -2,6 +2,23 @@
 <html>
 <head>
    <title>My Website</title>
+   <style>
+      label {
+         font-size: 30px;
+      }
+      p {
+         font-size: 30px;
+      }
+      input[type="text"] {
+         overflow: auto;
+         max-height: 100px;
+         white-space: pre-wrap;
+         word-wrap: break-word;
+         padding: 5px; /* add some padding */
+         border: 1px solid #ccc; /* add a border */
+         box-sizing: border-box; /* include border in element's dimensions */
+      }
+   </style>
 </head>
 <body>
    <form method="POST" action="/submit">
@@ -10,5 +27,6 @@
       <button type="submit">Submit</button>
   </form>
    <p>{{ output|safe }}</p>
+   <p>{{ user_input }}</p>
 </body>
 </html>
