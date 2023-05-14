@@ -12,9 +12,9 @@ class text_model:
 
     def predict_text(self, input_text):
         predictions = self.loaded_model.predict(np.array([input_text]))
-        if (predictions > 0):
+        if (predictions > 0.1):
             return "positive"
-        elif (predictions < 0):
+        elif (predictions < -0.1):
             return "negative"
         else:
             return "neutral"
