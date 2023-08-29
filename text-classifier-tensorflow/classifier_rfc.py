@@ -4,9 +4,9 @@ import os
 class rfc_model():
     def __init__(self):
         cwd = os.getcwd()
-        rfc_filepath = os.path.join(cwd, "rfc_model", "rfc_sentiment_model.joblib")
-        rfc_vectorizer = os.path.join(cwd, "rfc_model", "rfc_vectorizer.joblib")
-        rfc_encoder = os.path.join(cwd, "rfc_model", "rfc_encoder.joblib")
+        rfc_filepath = os.path.join(cwd, "text-classifier-tensorflow", "rfc_model", "rfc_sentiment_model.joblib")
+        rfc_vectorizer = os.path.join(cwd, "text-classifier-tensorflow", "rfc_model", "rfc_vectorizer.joblib")
+        rfc_encoder = os.path.join(cwd, "text-classifier-tensorflow", "rfc_model", "rfc_encoder.joblib")
 
         self.rfc = joblib.load(rfc_filepath)
         self.vectorizer = joblib.load(rfc_vectorizer)
