@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <title>My Website</title>
+   <style>
+      body {
+			font-family: Arial, sans-serif;
+         margin-left: 250px;
+		}
+      label {
+         font-size: 25px;
+      }
+      h1 {
+			font-weight: bold;
+		}
+      textarea {
+         font-size: 16px;
+			padding: 8px;
+			border: 1px solid #ccc;
+			border-radius: 4px;
+			width: 650px;
+			height: 200px;
+         display: block;
+      }
+      button[type="submit"] {
+			padding: 8px 16px;
+			background-color: #4CAF50;
+			color: #fff;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+         margin-top: 20px;
+      }
+      .sent1 {
+			font-size: 20px;
+			margin-bottom: 0;
+         margin: 50px 0;
+         margin-right: 400px;
+		}
+      .box {
+         position: relative;
+			width: 650px;
+			height: 200px;
+			background-color: #ECECEC;
+			border-radius: 4px;
+			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+			padding-top: 16px;
+         margin-top: 15px;
+			box-sizing: border-box;
+		}
+   </style>
+</head>
+<body>
+   <h1>Text Analysis Sentiment</h1>
+   <p class="sent1">This is a text analysis sentiment which scikit algorithm to trained the AI.
+      The model is trained using <b>scikit Random Forest</b> based of <b>Twitter Comments Sentiment Analysis</b> dataset.
+   </p>
+   <form method="POST" action="/submit">
+      <textarea id="user_input" name="user_input"></textarea>
+      <button type="submit">Submit</button>
+  </form>
+  <div class="box"></div>
+</body>
+</html>
