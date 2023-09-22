@@ -1,4 +1,4 @@
-# text-classifier
+# AI-text-classifier
 Trained a natural language processing AI Using Scikit Random Forest Algorithm
 Classify text as either positive, negative, neutral, or indifferent classification
 
