@@ -1,12 +1,21 @@
 from flask import Flask, request, render_template
-from classifier_rfc import rfc_model
+from classifier_rfc_loader import rfc_model
+from classifier_mnb_loader import mnb_model
+import nltk
+
+try:
+   nltk.data.find('tokenizers/punkt')
+except LookupError:
+   nltk.download('punkt')
 
 random_forest_model = rfc_model()
+multinomial_model = mnb_model()
 app = Flask(__name__)
 
 def my_function(user_input):
    output = []
-   output.append("using Random Forest model based of twitter comment dataset: " + random_forest_model.predict(user_input))
+   output.append("using Random Forest model: " + random_forest_model.predict(user_input))
+   output.append("using MultinomialNB model: " + multinomial_model.predict(user_input))
    
    return output
 

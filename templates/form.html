@@ -34,8 +34,10 @@
       .sent1 {
 			font-size: 20px;
 			margin-bottom: 0;
-         margin: 50px 0;
-         margin-right: 400px;
+         margin-left: 50px 0;
+		}
+      .sent2 {
+			font-size: 20px;
 		}
       .box {
          position: relative;
@@ -51,10 +53,13 @@
    </style>
 </head>
 <body>
-   <h1>Text Analysis Sentiment</h1>
-   <p class="sent1">This is a text analysis sentiment which scikit algorithm to trained the AI.
-      The model is trained using <b>scikit Random Forest</b> based of <b>Twitter Comments Sentiment Analysis</b> dataset.
-   </p>
+   <h1>Text Sentiment Analysis</h1>
+   <p class="sent1">This is a text sentiment analysis using scikit algorithm to trained the AI.</p>
+   <p class="sent1">There are 2 models loaded, one trained using Random Forest, and another using MultinomialNB.</p>
+   <span class="sent1">The model is based of the dataset: </span>
+   <a class="sent2" href="https://www.kaggle.com/datasets/jp797498e/twitter-entity-sentiment-analysis">
+      Twitter Sentiment Analysis Dataset
+   </a>
    <form method="POST" action="/submit">
       <textarea id="user_input" name="user_input"></textarea>
       <button type="submit">Submit</button>
